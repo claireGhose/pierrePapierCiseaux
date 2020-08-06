@@ -9,8 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
+  
    @State var monChoix = "dos carte"
-    
+   @State var sonChoix = "dos carte1"
+   @State var RandomCarte = ["pierre1 copie", "papier1 copie", "ciseau1 copie"]
+ 
+ 
     
     var body: some View {
       
@@ -19,7 +23,7 @@ struct ContentView: View {
                 .foregroundColor(Color.yellow)
                 .edgesIgnoringSafeArea(.all)
             .opacity(0.9)
-               
+        
         
         VStack{
         
@@ -44,12 +48,14 @@ struct ContentView: View {
                 .foregroundColor(Color.gray)
             }
             
-            
+   // MARK: Button
         HStack {
             Button(action: {
-                self.monChoix = "pierre1"
-            }) {
+                self.monChoix = "pierre1 copie"
+                let indice = Int.random(in: 0...2)
+                self.sonChoix = self.RandomCarte[indice]
                 
+            }) {
                 Image ("pierre1")
                 .resizable()
                 .frame(width: 110, height: 210)
@@ -58,7 +64,9 @@ struct ContentView: View {
                 
             
             Button(action: {
-                self.monChoix = "papier1"
+                self.monChoix = "papier1 copie"
+                let indice = Int.random(in: 0...2)
+                self.sonChoix = self.RandomCarte[indice]
             }) {
                 Image ("papier1")
                 .resizable()
@@ -68,7 +76,9 @@ struct ContentView: View {
                 
                 
                 Button(action: {
-                self.monChoix = "ciseau1"
+                self.monChoix = "ciseau1 copie"
+                    let indice = Int.random(in: 0...2)
+                self.sonChoix = self.RandomCarte[indice]
                            }) {
                 Image ("ciseau1")
                 .resizable()
@@ -78,7 +88,7 @@ struct ContentView: View {
             } // Hstack
             
             
-            
+   // MARK: jeu battle
             HStack {
                 Image (monChoix)
                 .resizable()
@@ -86,7 +96,7 @@ struct ContentView: View {
               
             Spacer()
                 
-                Image ("dos carte")
+                Image (sonChoix)
                 .resizable()
                 .frame(width: 75, height: 110)
                 
@@ -106,7 +116,7 @@ struct ContentView: View {
         
             
         } // Vstack
-            } // zstak
+            } // zstak}
 }  //var body
 }  // struct
 
