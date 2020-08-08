@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "pierre.png",
+      "filename" : "wood.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "pierre-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
